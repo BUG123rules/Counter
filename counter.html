@@ -71,17 +71,24 @@
     <h2 id = "months">Months I Have Loved You For:</h2>
     <h2 id = "years">Years I Have Loved You For:</h2>
 
+    <br>
+
+    <h2 id = "main">Back to Home</h2>
+
     <h1>‌</h1>
 
     <script>
         
         const targetDate = new Date('2024-06-07T16:11:36-08:00'); // PST is UTC-8
         const button = document.getElementById('seconds');
-
-// Add a click event listener to redirect
-button.addEventListener('click', () => {
-  window.location.href = 'construction.html'; // Replace with your target file
-});
+        const home = document.getElementById('main');
+       
+        home.addEventListener('click', () => {
+        window.location.href = 'index.html';
+        });
+        button.addEventListener('click', () => {
+          window.location.href = 'construction.html';
+        });
         
             const currentDate = new Date();
             
