@@ -1,19 +1,33 @@
-<head>
-    <h1>I Made This Counter To Show Just How Long I've Loved You</h1>
-    
-        
+<head>  
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
     <link rel = "stylesheet" href="style.css">
 
     <style>
       h2 {
         font-size: 2em;
       }
+
+      .hidden {
+    
+        visibility: hidden;
+      }
     </style>
+
+<script>
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.remove("hidden");
+  });
+
+</script>
+
 </head>
 
-<body>
-    
+<body class = "hidden">
+  <h1>I Made This Counter To Show Just How Long I've Loved You</h1>
+
+
     <br>
 
     <h2 id = "seconds">Seconds I Have Loved You For:</h2>
@@ -40,7 +54,7 @@
         window.location.href = 'index.html';
         });
         button.addEventListener('click', () => {
-          window.location.href = 'construction.html';
+          window.location.href = 'seconds.html';
         });
         
             const currentDate = new Date();

@@ -10,15 +10,26 @@
         margin-bottom: 0px;
         bottom: 0px;
       }
-    </style>    
+      
+      .hidden {
+    visibility: hidden;
+  }
+    </style>  
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("hidden");
+      });
+    </script>
+    
 </head>
 
-<body>
+<body class="hidden">
 
   
     <h1 class="header-box">Website of My Love</h1>
     <h4>For the best person on the planet,<br>Jameson Ridgeway</h4>
-    
+
   <br>
 
   <h2 id = "counter">Counter of My Love</h2>
