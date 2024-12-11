@@ -25,4 +25,33 @@ body {
       transform: scale(1.03);
     }
 
-    
+    .counter-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .arrowLeft, .arrowRight {
+        position: absolute;
+        font-size: 30px;
+        transform: scale(0.5);
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .arrowLeft:hover, .arrowRight:hover {
+        transform: scale(0.56);
+      }
+      
+      .arrowLeft {
+        left: -5px; /* Adjust this value to move the left arrow closer */
+      }
+      
+      .arrowRight {
+        right: -5px; /* Adjust this value to move the right arrow closer */
+      }
+      
+      #counter-number {
+        font-size: 40px;
+      }

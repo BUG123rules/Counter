@@ -1,0 +1,136 @@
+<head>        
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href="style.css">
+
+    <style>
+      h3 {
+        font-size: 100px;
+        padding: 0px;
+        margin: 0px;
+      }
+      
+      h2 {
+        font-size: 2em;
+      }
+
+      img {
+        display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    height: auto;
+      }
+
+      .hidden {
+    visibility: hidden;
+  }
+    </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.remove("hidden");
+    });
+  </script>
+  
+</head>
+
+<body class="hidden">
+    
+    <h1>I Made This Counter To Show Just How Long I've Loved You</h1>
+
+    <div class="counter-container">
+      <img id="arrowLeft" class="arrowLeft" src="arrowLeft.png" alt="arrow">
+      <h3 id = "count"></h2>
+      <img id="arrowRight" class="arrowRight" src="arrowRight.png" alt="arrow">
+    </div>
+    
+    <img src="heart.png" alt="Heart Image" class="heart-image">
+
+    <br>
+
+    <h2 id = "counter">Back to Counter</h2>
+
+    <script>
+        
+        
+        const counter = document.getElementById('counter');
+        const leftArrow = document.getElementById('arrowLeft');
+        const rightArrow = document.getElementById('arrowRight');
+       
+        const urlParams = new URLSearchParams(window.location.search);
+        let type = Number(urlParams.get('type'));
+        console.log(type);
+
+        leftArrow.addEventListener('click', () => {
+          if (type > 1) {
+            type--;
+            updateCountUp();
+            console.log(type);
+          }
+        });
+        rightArrow.addEventListener('click', () => {
+          if (type < 7) {
+            type++;
+            updateCountUp();
+            console.log(type);
+          }
+        });
+
+        counter.addEventListener('click', () => {
+          window.location.href = 'counter.html';
+        });
+        
+
+        if (type == 0 || type == null) {
+          type = 1;
+        }
+            
+        updateCountUp();
+
+        // Function to update the time difference
+        function updateCountUp() {
+            
+            const currentDate = new Date();
+            const targetDate = new Date('2024-06-07T16:11:36-08:00'); // PST is UTC-8
+            
+            const differenceInMillis = currentDate.getTime() - targetDate.getTime();
+            const differenceInSeconds = Math.floor(differenceInMillis / 1000);
+            const differenceInMinutes = Math.floor(differenceInSeconds / 60);
+            const differenceInHours = Math.floor(differenceInMinutes / 60);
+            const differenceInDays = Math.floor(differenceInHours / 24);
+            const differenceInWeeks = Math.floor(differenceInDays / 7);
+            const differenceInMonths = (currentDate.getMonth() + 1) - (targetDate.getMonth() + 1);
+            const differenceInYears = currentDate.getFullYear() - targetDate.getFullYear();
+            
+            switch (type) {
+              case 1:
+                document.getElementById('count').textContent = differenceInSeconds;
+                break;
+              case 2:
+                document.getElementById('count').textContent = differenceInMinutes;
+                break;
+              case 3:
+                document.getElementById('count').textContent = differenceInHours;
+                break;
+              case 4:
+                document.getElementById('count').textContent = differenceInDays;
+                break;
+              case 5:
+                document.getElementById('count').textContent = differenceInWeeks;
+                break;
+              case 6:
+                document.getElementById('count').textContent = differenceInMonths;
+                break;
+              case 7:
+                document.getElementById('count').textContent = differenceInYears;
+                break;
+              default:
+                console.log('Fail');
+                break;
+            }
+
+        }
+
+        // Call the function every second
+        setInterval(updateCountUp, 1000);
+    </script>
+</body>
