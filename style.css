@@ -7,7 +7,7 @@ body {
       padding: 20px;
     }
   
-
+    
     h2 {
       font-size: 3em;
       margin-bottom: 10px;
@@ -25,6 +25,9 @@ body {
       transform: scale(1.03);
     }
 
+   
+   
+   
     .counter-container {
         position: relative;
         display: flex;
