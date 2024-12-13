@@ -45,6 +45,7 @@
 
   <img src="heart.png" alt="It's a heart. It shows how much I love you">
   
+  <h2 id="main">Back to Home</h2>
   
 <script>
         
@@ -57,6 +58,12 @@
 
         poem.addEventListener('click', () => {
         window.location.href = 'poem.html';
+        });
+
+        const home = document.getElementById('main');
+       
+        home.addEventListener('click', () => {
+        window.location.href = 'index.html';
         });
     </script>
 </body>
